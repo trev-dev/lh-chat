@@ -15,5 +15,7 @@ $('form').submit(function () {
 });
 
 socket.on('message', function (msg) {
+  var audio = new Audio('msg.mp3');
   $('<li>').text(msg).appendTo('#history');
+  audio.play();
 });
