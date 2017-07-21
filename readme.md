@@ -10,4 +10,4 @@ Some key differences between how the did it and how I did it:
 
 [Here is the link](https://github.com/lighthouse-labs/gitbook-node-chat-tutorial) to the original lesson for reference.
 
-[Live on Heroku](https://lh-chat.herokuapp.com/)
+[Live on Heroku](https://lh-chat.herokuapp.com/) - Feel free to get a few people on it at the same time to try it out
