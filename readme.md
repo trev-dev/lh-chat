@@ -1,4 +1,4 @@
-#Basic Socket.io Chat Program
+## Basic Socket.io Chat Program
 I got to learn the basics of how to do this thanks to [Lighthouse Labs](https://www.lighthouselabs.ca/)
 
 Some key differences between how the did it and how I did it:
