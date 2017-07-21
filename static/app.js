@@ -6,6 +6,10 @@ $('form').submit(function () {
 
     text += $('#initials').val() +': ';
 
+  } else {
+
+    text += 'ANON: ';
+
   }
 
   text += $('#message').val();
@@ -15,7 +19,15 @@ $('form').submit(function () {
 });
 
 socket.on('message', function (msg) {
-  var audio = new Audio('msg.mp3');
+
   $('<li>').text(msg).appendTo('#history');
-  audio.play();
+  console.log(msg.indexOf($('#initials').val() +': ') < 0);
+  // Play notification if message doesn't contain your initials.
+  if (msg.indexOf($('#initials').val() +': ') < 0) {
+
+      var audio = new Audio('msg.mp3');
+      audio.play();
+
+  }
+  
 });
