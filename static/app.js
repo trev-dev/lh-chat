@@ -1,3 +1,31 @@
+$.ajax({
+
+  url: '/recents',
+  type: 'get'
+
+}).done(function(data){
+  
+  data = JSON.parse(data);
+
+  if (data.length > 0) {
+    
+    data.forEach(function(msg){
+
+      $('<li>').text(msg.name+" : "+msg.text).appendTo('#history');
+
+    });
+
+  } else {
+    console.log('Hello');
+    $('<li>').text('No recent messages').appendTo('#history');
+
+  }
+  
+
+});
+
+
+
 var socket = io();
 
 function keyGen() {
@@ -40,13 +68,17 @@ $('form').submit(function () {
 socket.on('message', function (msg) {
   msg = JSON.parse(msg);
 
-  $('<li>').text(msg.name+" : "+msg.text).appendTo('#history');
-
+  $('#history').animate({ scrollTop: $('#history').prop('scrollHeight') }, 1000);
   // Play notification if message doesn't contain your initials.
   if (msg.user != UID) {
 
+      $('<li>').text(msg.name+" : "+msg.text).appendTo('#history');
       var audio = new Audio('msg.mp3');
       audio.play();
+
+  } else {
+
+    $('<li style="background-color: lightblue; border-radius: 6px;">').text(msg.name+" : "+msg.text).appendTo('#history');
 
   }
   
