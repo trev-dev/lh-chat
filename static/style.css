@@ -17,7 +17,7 @@ main {
     border-radius: 6px;
     box-shadow: 3px 3px 12px #c8c8c8;
     margin: 20px auto;
-    max-width: 450px;
+    max-width: 90%;
     padding: 20px;
 }
 
@@ -71,8 +71,15 @@ input {
     padding: 5px;
 }
 
+#history {
+
+    height: 60vh;
+    overflow-y: scroll;
+
+}
+
 #initials {
-    width: 25px;
+    width: 100px;
 }
 
 #message {
