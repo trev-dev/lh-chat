@@ -7,6 +7,7 @@ Some key differences between how the did it and how I did it:
 * Use routes to render the template
 * Actually get the initials from the chat box.
 * Message notification sound added on emit
+* Use JSON object strings to handle messaging
 * Improved message box style
 
 [Here is the link](https://github.com/lighthouse-labs/gitbook-node-chat-tutorial) to the original lesson for reference.
