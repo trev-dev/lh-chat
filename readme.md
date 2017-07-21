@@ -1,7 +1,7 @@
 ## Basic Socket.io Chat Program
 I got to learn the basics of how to do this thanks to [Lighthouse Labs](https://www.lighthouselabs.ca/)
 
-Some key differences between how the did it and how I did it:
+Some key differences between how they did it and how I did it:
 
 * Use pug view engine instead of a static folder for everything
 * Use routes to render the template
@@ -9,6 +9,7 @@ Some key differences between how the did it and how I did it:
 * Message notification sound added on emit
 * Use JSON object strings to handle messaging
 * Improved message box style
+* Collect most recent messages so long as the server's still up
 
 [Here is the link](https://github.com/lighthouse-labs/gitbook-node-chat-tutorial) to the original lesson for reference.
 
