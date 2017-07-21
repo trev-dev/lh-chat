@@ -8,3 +8,5 @@ Some key differences between how the did it and how I did it:
 * Actually get the initials from the chat box.
 
 [Here is the link](https://github.com/lighthouse-labs/gitbook-node-chat-tutorial) to the original lesson for reference.
+
+[Live on Heroku](https://lh-chat.herokuapp.com/)
