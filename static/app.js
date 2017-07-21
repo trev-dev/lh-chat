@@ -1,29 +1,49 @@
 var socket = io();
 
+function keyGen() {
+    var len = 24;
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+    var string = '';
+
+    for (var i = 0; i < len; i++) {
+        
+        let key = Math.floor(Math.random() * chars.length);
+        string += chars[key];
+        
+    }
+
+    return string;
+
+}
+
+var UID = keyGen();
+
 $('form').submit(function () {
-  var text = '';
+  var message = {};
   if ($('#initials').val()) {
 
-    text += $('#initials').val() +': ';
+    message.name = $('#initials').val();
 
   } else {
 
-    text += 'ANON: ';
+    message.name = 'Anonymous';
 
   }
 
-  text += $('#message').val();
-  socket.emit('message', text);
+  message.text = $('#message').val();
+  message.user = UID;
+  socket.emit('message', JSON.stringify(message));
   $('#message').val('');
   return false;
 });
 
 socket.on('message', function (msg) {
+  msg = JSON.parse(msg);
 
-  $('<li>').text(msg).appendTo('#history');
-  console.log(msg.indexOf($('#initials').val() +': ') < 0);
+  $('<li>').text(msg.name+" : "+msg.text).appendTo('#history');
+
   // Play notification if message doesn't contain your initials.
-  if (msg.indexOf($('#initials').val() +': ') < 0) {
+  if (msg.user != UID) {
 
       var audio = new Audio('msg.mp3');
       audio.play();
