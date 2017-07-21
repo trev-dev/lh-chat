@@ -2,7 +2,7 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 var app = express();
 
 app.set('view engine', 'pug');
